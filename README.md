@@ -17,11 +17,12 @@ Config is in Exiled -> Configs -> Your_Server_Port_Config -> SCPLeftNotif
 
 ![image](https://github.com/Adyman0010/SCP-Left-Notification/assets/139592888/d919a78c-44ea-4d07-860a-66828b3f603e)
 
+# Config
+
 ```
 SCPLeftNotif:
   is_enabled: true
   debug: false
   # What message should brodcast to admins, when SCP leaves
   admin_message: 'A Player left as a SCP! Check your console by pressing ;'
-``
 
