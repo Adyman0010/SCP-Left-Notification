@@ -25,4 +25,3 @@ SCPLeftNotif:
   debug: false
   # What message should brodcast to admins, when SCP leaves
   admin_message: 'A Player left as a SCP! Check your console by pressing ;'
-
