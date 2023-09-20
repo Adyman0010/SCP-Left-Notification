@@ -33,7 +33,7 @@ namespace SCPLeftNotif
         
         public void OnScpLeft(LeftEventArgs ev)
         {
-            if ( ev.Player.IsScp && Instance.Config.IsScpLeftNotifEnabled )
+            if (ev.Player.IsScp)
             {
                 foreach (Player player in Player.List)
                 {
