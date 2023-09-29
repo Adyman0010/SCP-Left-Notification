@@ -1,5 +1,6 @@
 # SCP-Left-Notification
-When a SCP Lefts it will send a notification to all avaialable admins, showing them:
+- When a SCP Lefts it will send a notification to all avaialable admins, showing them.
+- The SCP get's replaced by a spectator.
 
 # Installation
 ```
