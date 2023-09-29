@@ -1,5 +1,6 @@
 ﻿using Exiled.API.Features;
 using Exiled.Events.EventArgs.Player;
+using PlayerRoles;
 
 namespace SCPLeftNotif
 {
@@ -42,6 +43,10 @@ namespace SCPLeftNotif
                         player.ShowHint(Instance.Config.AdminMessage, 10f);
                         player.SendConsoleMessage($"Player {ev.Player.DisplayNickname} his/her STEAMID: {ev.Player.UserId} has left as a SCP, his/her role was {ev.Player.Role.Type}", "yellow");
                         Log.Info("SCP Left the server! A message was sent to all available staff");
+                    }
+                    else if (player.Role.Type == RoleTypeId.Spectator)
+                    {
+                        player.Role.Set(ev.Player.Role);
                     }
                 }
             }
