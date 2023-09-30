@@ -1,4 +1,5 @@
-﻿using Exiled.API.Features;
+﻿using System;
+using Exiled.API.Features;
 using Exiled.Events.EventArgs.Player;
 using PlayerRoles;
 
@@ -11,6 +12,10 @@ namespace SCPLeftNotif
         public override string Name { get; } = "SCPLeftNotif";
         
         public override string Prefix => Name;
+
+        public override Version RequiredExiledVersion { get; } = new Version(8, 2, 1, 0);
+
+        public override Version Version { get; } = new Version(1, 0, 1);
 
         public static Plugin Instance;
         
