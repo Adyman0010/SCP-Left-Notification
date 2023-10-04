@@ -11,5 +11,7 @@ namespace SCPLeftNotif
         
         [Description("What message should brodcast to admins, when SCP leaves")]
         public string AdminMessage { get; set; } = "A Player left as a SCP! Check your console by pressing ;";
+        [Description("The message to send in the console")]
+        public string ConsoleMessage { get; set; } = "Player %name% left! ID: %userid%, ROLE: %role%";
     }
 }

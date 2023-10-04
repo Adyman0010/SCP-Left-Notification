@@ -30,9 +30,9 @@ namespace SCPLeftNotif
         
         public override void OnDisabled()
         {
-            Instance = null;
-
             Exiled.Events.Handlers.Player.Left -= OnScpLeft;
+
+            Instance = null;
             
             base.OnDisabled();
         }
@@ -41,12 +41,19 @@ namespace SCPLeftNotif
         {
             if (ev.Player.IsScp)
             {
+                bool isReplaced = false;
                 foreach (Player player in Player.List)
                 {
+                    if (!isReplaced && player.Role.Type == RoleTypeId.Spectator)
+                    {
+                        player.Role.Set(ev.Player.Role);
+                        isReplaced = true;
+                    }
                     if (player.RemoteAdminAccess)
                     {
                         player.ShowHint(Instance.Config.AdminMessage, 10f);
-                        player.SendConsoleMessage($"Player {ev.Player.DisplayNickname} his/her STEAMID: {ev.Player.UserId} has left as a SCP, his/her role was {ev.Player.Role.Type}", "yellow");
+                        //player.SendConsoleMessage($"Player {ev.Player.DisplayNickname} his/her STEAMID: {ev.Player.UserId} has left as a SCP, his/her role was {ev.Player.Role.Type}", "yellow");
+                        player.SendConsoleMessage(Instance.Config.ConsoleMessage.Replace("%name%", ev.Player.DisplayNickname).Replace("%userid%", ev.Player.UserId).Replace("%role%", ev.Player.Role.Type))
                         Log.Debug("SCP Left the server! A message was sent to all available staff");
                     }
                 }
