@@ -7,6 +7,9 @@
 Install in Exiled -> Plugins
 ```
 ```
+Install Newtonsoft.json in Exiled -> Plugins -> dependencies
+```
+```
 Config is in Exiled -> Configs -> Your_Server_Port_Config -> SCPLeftNotif
 ```
 
