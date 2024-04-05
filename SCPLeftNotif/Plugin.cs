@@ -18,9 +18,9 @@ namespace SCPLeftNotif
 
         public override string Prefix => Name;
 
-        public override Version RequiredExiledVersion { get; } = new Version(8, 8, 0);
+        public override Version RequiredExiledVersion { get; } = new Version(8, 8, 0, 0);
 
-        public override Version Version { get; } = new Version(2, 0, 0);
+        public override Version Version { get; } = new Version(2, 0, 0, 0);
 
         private static Plugin _instance;
 
